@@ -1,0 +1,61 @@
+
+#central{
+   width: 100vw;
+   height: 100vh;
+}
+
+/* L'element */
+.burger {
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background: rgb(43, 55, 226);
+
+  }
+
+  
+    .burger::before, .burger::after {
+        content: "";
+        display: block;
+      }
+
+      /* L'element */
+.burger, .burger::before, .burger::after {
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background: white;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .burger::before {
+    margin-top: -8px;
+  }
+  .burger::after {
+    margin-top: 8px;
+  }
+
+  /* L'animation */
+.burger:hover {
+    /* L'opacite se propagerait aux pseudoelements, donc
+     * on change la background-color a améliorer pour que cela puisse se fondre parfaitement au fond lors de l'animation
+     */
+    background: rgb(3, 17, 141);
+  }
+  .burger:hover::before {
+    margin-top: 0px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .burger:hover::after {
+    margin-top: 0px;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
